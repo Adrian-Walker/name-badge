@@ -6,11 +6,18 @@ class Badge extends Component() {
         super()
         this.state = []
     }
+
+
     render() {
         return (
             <div>
                 <input name="firstName"></input>
                 <input name="lastName"></input>
+                <input name="email"></input>
+                <input name="placeOfBirth"></input>
+                <input name="phone"></input>
+                <input name="favoriteFood"></input>
+                <input name="about"></input>
             </div>
         )
     }
