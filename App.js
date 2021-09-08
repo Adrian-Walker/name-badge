@@ -1,5 +1,6 @@
 import React from "react"
 import { Component } from "react/cjs/react.production.min";
+import Badge from "./Badge";
 
 class App extends Component {
     constructor() {
@@ -16,11 +17,17 @@ class App extends Component {
     }
 
     render() {
-        return (
-            <div>
+        const newBadges = this.setState.
 
-            </div>
-        )
+            return(
+                <div>
+                    <form>
+                        <h1 className="head">Name Badge</h1>
+                        <Badge />
+                        <button>Submit</button>
+                    </form>
+                </div>
+            )
     }
 
 }
