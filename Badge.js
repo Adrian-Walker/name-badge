@@ -15,6 +15,7 @@ class Badge extends React.Component {
                 <h2 name="phone" >{this.props.phone}</h2>
                 <h2 name="favoriteFood" >{this.props.favoriteFood}</h2>
                 <h2 name="about" >{this.props.about}</h2>
+                <br></br>
             </div>
         )
     }
