@@ -20,17 +20,22 @@ class App extends Component {
         this.handleChange = this.handleChange.bind(this)
     }
 
-    handleSubmit() {
-        this.setState(prevState => {
+    handleSubmit(e) {
+        e.preventDefault();
+        this.setState(() => {
             return {
-                nextBadge: [...prevState.nextBadge, prevState],
-                firstName: "",
-                lastName: '',
-                email: "",
-                placeOfBirth: "",
-                phone: "",
-                favoriteFood: "",
-                about: ""
+                nextBadge: [...this.state.nextBadge,
+                {
+                    firstName: this.state.firstName,
+                    lastName: this.state.lastName,
+                    email: this.state.email,
+                    placeOfBirth: this.state.placeOfBirth,
+                    phone: this.state.phone,
+                    favoriteFood: this.state.favoriteFood,
+                    about: this.state.about,
+                }
+                ],
+
 
             }
         })
@@ -64,7 +69,11 @@ class App extends Component {
                     <input onChange={this.handleChange} id="tellUs" name="about" placeholder="Tell Us About Yourself" type="text" min="3" ></input>
 
                     <button>Submit</button>
-                    <Badge />
+
+                    {this.state.nextBadge.map((object, index) => {
+                        return <Badge key={index} firstName={object.firstName} lastName={object.lastName} email={object.email} placeOfBirth={object.placeOfBirth} phone={object.phone} favoriteFood={object.favoriteFood} about={object.about} />
+                    })}
+
                 </form>
             </div>
 
